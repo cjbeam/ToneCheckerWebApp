@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cjbeam/SWENG500#readme",
   "dependencies": {
+    "bower": "^1.7.9",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "nodemon": "^1.10.2"
