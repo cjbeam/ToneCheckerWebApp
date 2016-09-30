@@ -1,0 +1,106 @@
+html {
+	font-family: Arial;
+	font-size: 14px;
+	min-width: 620px;
+}
+body {
+	margin: 0;
+}
+.header {
+	padding: 10px 2%;
+	background: #666;
+	color:white;
+}
+h1 {
+	margin: 0;
+}
+p {
+	padding: 0 2%;
+}
+.main {
+	margin:0 auto;
+	padding-bottom: 10px;
+	width: 80%;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+
+.formBox {
+	border: 1px solid #666;
+	margin-left: auto;
+	margin-right:auto;
+	width: 40%;
+	overflow: hidden;
+	text-align:center;
+}
+
+.formBox h2 {
+	background: #666;
+	color:white;
+	padding: 10px 2%;
+	margin: 0;
+}
+.formBox form {
+	padding: 2% 5%;
+
+}
+.row {
+	border-bottom:1px solid #666;
+	margin-bottom:20px;
+	float:left;
+	overflow:hidden;
+	width:100%;
+}
+
+.labelContainer {
+	float: left;
+	padding: 6px 1% 0px 1%;
+	text-align: right;
+	width: 28%;
+}
+
+.inputContainer {
+	width: 68%;
+	float: left;
+	display:block;
+	padding: 3px 1%;
+	
+}
+
+.inputContainer input, .inputContainer select {
+	border:none;
+	border-top:1px solid transparent;
+	font-size: 14px;
+	width:99%;
+	padding: 2px;
+}
+input.ng-valid {
+	color:#000;
+
+}
+input.ng-invalid  {
+	color:#f00;
+}
+
+button{
+	background: white;
+    border: 1px solid #666;
+    padding: 5px 11px;
+    font-size: 18px;
+    margin-left:auto;
+    margin-right:auto;
+    cursor: pointer;
+}
+
+ button:disabled:hover {
+ 	background: white;
+ 	color:graytext;
+ 	cursor: default;
+ }
+
+button:hover {
+	background: #666;
+	color:white;
+	border: 1px solid #666;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "tone-analyzer-web-app",
+  "description": "web app for tone analyzer",
+  "main": "index.js",
+  "authors": [
+    "Cassandra Beam"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.5.8"
+  }
+}

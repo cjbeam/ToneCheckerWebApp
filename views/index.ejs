@@ -1,0 +1,77 @@
+<html ng-app="registration">
+<head>
+	<script src="/bower_components/angular/angular.min.js" type="text/javascript" ></script>
+	<script src="/registration.js" type="text/javascript" ></script>
+
+	<link rel="stylesheet" type="text/css" href="/styles.css" />
+	<title>Tone Checker</title>
+</head>
+<body ng-controller="registrationCtrl">
+	<div class="main">
+		<div class="header">
+			<h1>Tone Checker</h1>
+		</div>
+		<p>
+		Tone Checker is a Microsoft Outlook plugin that will assess the emotions of your incoming and outgoing emails. Find out whether your emails have unintended anger, fear, joy, sadness, or disgust before you send them. Additionally, the Tone Checker can help you interpret the emotions of incoming emails. 
+		</p>
+
+
+		<div class="formBox">
+			<h2>Register to use the Tone Checker Outlook Plugin</h2>
+			<form name="registrationForm" ng-submit="submitForm()">
+				<div class="row">
+					<div class="labelContainer"><label for="email">Email</label></div>
+					<div class="inputContainer"><input type="email" id="email" required ng-model="user.email"/></div>
+				</div>
+				<div class="row">
+					<div class="labelContainer"><label for="birthday">Birthday</label></div>
+					<div class="inputContainer"><input type="date" placeholder="yyyy-MM-dd" min="{{minDate}}" max="{{maxDate}}" ng-model="user.birthday" /></div>
+				</div>
+				<div class="row">
+					<div class="labelContainer"><label for="gender">Gender</label></div>
+					<div class="inputContainer">
+						<select ng-model="user.gender">
+							<option value="none" selected></option>
+							<option value="female">Female</option>
+							<option value="male">Male</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="labelContainer"><label for="country">Country</label></div>
+					<div class="inputContainer">
+						<select ng-model="user.country">
+							<option value="" ng-selected></option>
+							<option ng-repeat="country in countryList" ng-value="country.alpha2_code">{{country.name}}</option>
+						</select>
+					</div>
+				</div>
+				<div class="row" ng-show="user.country == 'US'">
+					<div class="labelContainer"><label for="state">State</label></div>
+					<div class="inputContainer">
+						<select ng-model="user.state">
+							<option value="" ng-selected></option>
+							<option ng-repeat="state in stateList" ng-value="state.abbr">{{state.name}}</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="labelContainer"><label for="educationLevel">Education Level</label></div>
+					<div class="inputContainer">
+						<select ng-model="user.educationLevel">
+							<option value="" selected="selected"></option>
+							<option value="LTHS">Less than High School</option>
+							<option value="HS">High School</option>
+							<option value="SC">Some College</option>
+							<option value="C">College</option>
+							<option value="GS">Graduate School</option>
+						</select>
+					</div>
+				</div>
+				<button type="submit" ng-disabled="registrationForm.$invalid">Register &amp; Download</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
