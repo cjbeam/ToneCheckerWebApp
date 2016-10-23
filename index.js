@@ -10,7 +10,9 @@ app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.get('/', function(req, res){
 	res.render('index.ejs');
 });
-
+app.get('/data', function(req, res){
+	res.render('data.ejs');
+});
 
 app.listen(3000, function(){
 	console.log('Listening on port 3000');
