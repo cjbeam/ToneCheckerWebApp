@@ -37,16 +37,8 @@
 						</select>
 					</div>
 				</div>
+
 				<div class="row">
-					<div class="labelContainer"><label for="country">Country</label></div>
-					<div class="inputContainer">
-						<select ng-model="user.country">
-							<option value="" ng-selected></option>
-							<option ng-repeat="country in countryList" ng-value="country.alpha2_code">{{country.name}}</option>
-						</select>
-					</div>
-				</div>
-				<div class="row" ng-show="user.country == 'US'">
 					<div class="labelContainer"><label for="state">State</label></div>
 					<div class="inputContainer">
 						<select ng-model="user.state">
