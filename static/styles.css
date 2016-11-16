@@ -1,19 +1,13 @@
 html {
 	font-family: Arial;
 	font-size: 14px;
-	min-width: 620px;
+	min-width: 370px;
 }
 body {
 	margin: 0;
 }
-.header {
-	padding: 10px 2%;
-	background: #666;
-	color:white;
-}
-h1 {
-	margin: 0;
-}
+
+
 p {
 	padding: 0 2%;
 }
@@ -21,29 +15,26 @@ p {
 	margin:0 auto;
 	padding-bottom: 10px;
 	width: 80%;
-	border-left: 1px solid #666;
-	border-right: 1px solid #666;
-	border-bottom: 1px solid #666;
+	background-color:#e1e5ea;
 }
-
 .formBox {
 	border: 1px solid #666;
 	margin-left: auto;
 	margin-right:auto;
-	width: 40%;
+	width: 50%;
 	overflow: hidden;
 	text-align:center;
 }
 
 .formBox h2 {
-	background: #666;
+	background: #949FB1;
 	color:white;
 	padding: 10px 2%;
 	margin: 0;
 }
 .formBox form {
 	padding: 2% 5%;
-
+	margin-bottom:0;
 }
 .row {
 	border-bottom:1px solid #666;
@@ -80,7 +71,7 @@ input.ng-valid {
 
 }
 input.ng-invalid  {
-	color:#f00;
+	color:#F7464A;
 }
 
 button{
@@ -103,4 +94,34 @@ button:hover {
 	background: #666;
 	color:white;
 	border: 1px solid #666;
+}
+.required {
+	float:right;
+	font-size:10px;
+	margin:0;
+	padding:6px 8px;
+}
+@media (max-width: 1000px) {
+	.formBox {
+		width: 60%;
+	}
+
+}
+
+
+@media (max-width: 800px) {
+	.main {
+		width: 100%;
+	}
+
+	.formBox {
+		width: 70%;
+	}
+
+}
+@media (max-width: 500px) {
+	.formBox {
+		width: 90%;
+	}
+
 }
