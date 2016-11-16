@@ -1,0 +1,34 @@
+.header {
+	padding: 10px 2% 2px 2%;
+	background: #949FB1;
+	color:#fff;
+	box-shadow: 0 3px #bbb;
+}
+.links {
+	/*border-top:1px solid #15191e;
+	border-bottom:1px solid #15191e;*/
+	background: #363d4a;
+	box-shadow: 0 1px #bbb; 
+	display:flex;
+	overflow:hidden;
+}
+.links a {
+	color:#fff;
+	border-left:1px solid #15191e;
+	font-size:16px;
+	font-weight: bold;
+	padding: 3px;
+	width:33%;
+	text-decoration: none;
+	margin:0;
+	text-align: center;
+}
+.links a:hover {
+	background-color:#15191e;
+}	
+.links a:first-child {
+	border-left:none;
+}
+h1 {
+	margin: 0;
+}
