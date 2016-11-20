@@ -13,7 +13,9 @@ app.get('/', function(req, res){
 app.get('/data', function(req, res){
 	res.render('data.ejs');
 });
-
+app.get('/about', function(req, res){
+	res.render('about.ejs');
+});
 app.listen(3000, function(){
 	console.log('Listening on port 3000');
 })
