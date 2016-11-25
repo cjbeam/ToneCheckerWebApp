@@ -20,22 +20,27 @@
 	<a href="/data">Data Analysis</a>
 	<a href="/about">About</a>
 </div>
-<div class="main">
+<div class="main" ng-controller="dataAnalysisCtrl">
 <p>
 An analysis of data collected.
 </p>
 <div>
-<p>Likelihood of social tendancies by 
-<select class="graphSelect">
-	<option>Gender</option>
-	<option>Education Level</option>
-	<option>State</option>
-	<option>Age</option>
+<p>Likelihood of 
+<select class="selectTendancies" ng-model="tendancy">
+	<option ng-repeat="tend in tendancies" ng-value="tend.value">{{tend.name}}</option>
+</select>
+by 
+<select class="selectDemographic" ng-model="demographic">
+	<option ng-repeat="demographic in demographics" ng-value="demographic.value">{{demographic.name}}</option>
+</select>
+<select class="selectState" ng-model="selectedState" ng-show="demographic == 'state'">
+	<option ng-repeat="st in state" ng-value="st.StateId">{{st.StateName}}</option>
 </select>
 </p>
+<button ng-click="getData()">Go</button>
 </div>
-<div class="chartContainer" ng-controller="socialTendanciesBarCtrl">
-<canvas id="bar" class="chart chart-bar"
+<div class="chartContainer" >
+<canvas id="bar" class="chart chart-bar" ng-show="showChart"
   chart-data="data" chart-labels="labels" chart-series="series" chart-options="options">
 </canvas>
 </div>
