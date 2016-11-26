@@ -36,8 +36,10 @@ by
 <select class="selectState" ng-model="selectedState" ng-show="demographic == 'state'">
 	<option ng-repeat="st in state" ng-value="st.StateId">{{st.StateName}}</option>
 </select>
-</p>
+
 <button ng-click="getData()">Go</button>
+</p>
+
 </div>
 <div class="chartContainer" >
 <canvas id="bar" class="chart chart-bar" ng-show="showChart"

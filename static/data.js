@@ -3,7 +3,7 @@ var app = angular.module('data', ['chart.js'])
 .controller("dataAnalysisCtrl", ['$scope', '$http', function($scope, $http) {
   var tendancyLabels = {
     'language':['Analytical', 'Confident', 'Tentative'],
-    'social':['Openness', 'Conscientiouness', 'Extraversion', 'Agreeableness', 'Emotional Range'],
+    'social':['Agreeableness', 'Conscientiouness', 'Emotional Range', 'Extraversion', 'Openness'],
     'emotion':['Anger', 'Disgust', 'Fear', 'Joy', 'Sadness']
   }, 
   graphData;
@@ -26,9 +26,11 @@ var app = angular.module('data', ['chart.js'])
     'name':'Education Level'},
   {'value':'state',
     'name':'State'},
-  {'value':'age',
+  {'value':'birthdate',
     'name':'Age Range'}
   ]
+
+ $scope.birthdate = ['21-30', '31-40', '41-50', '51-60', '60+'];
 
  $http.get('http://psuwebmemberservice.azurewebsites.net/api/states', {}).then(function(response){
     $scope.state = response.data;
@@ -93,10 +95,12 @@ var app = angular.module('data', ['chart.js'])
         }
       }
 
-    } else if ($scope.demographic === 'education' || $scope.demographic === 'gender') {
+    } else {
       for(i; i < demographicData.length; i++) {
         if ($scope.demographic === 'education') {
           $scope.series[i] = demographicData[i].EducationLevel
+        } else if ($scope.demographic === 'birthdate') {
+          $scope.series[i] = demographicData[i];
         } else {
           $scope.series[i] = demographicData[i].GenderType
         } 
@@ -106,9 +110,7 @@ var app = angular.module('data', ['chart.js'])
         $scope.data[j] = new Array($scope.labels.length);
         k = 0;
         for(k; k < $scope.labels.length; k++) {
-            console.log(j * $scope.labels.length + k);
-            $scope.data[j][k] = graphData[j * $scope.labels.length + k].AverageScore * 100;
-        }
+       }
       }
     }
 
