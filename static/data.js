@@ -105,12 +105,14 @@ var app = angular.module('data', ['chart.js'])
           $scope.series[i] = demographicData[i].GenderType
         } 
       }
-      $scope.data = new Array($scope.series.length);   
+      $scope.data = new Array($scope.series.length); 
+      j = 0;  
       for(j; j < $scope.series.length; j++) {
         $scope.data[j] = new Array($scope.labels.length);
         k = 0;
         for(k; k < $scope.labels.length; k++) {
-       }
+          $scope.data[j][k] = graphData[j * $scope.labels.length + k].AverageScore * 100;
+        }
       }
     }
 
